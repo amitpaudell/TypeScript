@@ -52,3 +52,29 @@ function serveOrder(item:ChaiOrder|string){
   return `Serving custom chai ${item}`
 }
 
+//UserDefined chai
+
+type MasalaChai={type:"masala"; spicelevel:number}
+type GingerChai={type:"ginger"; amount:number}
+type ElaichiChai={type:"elaichi"; amount:number}
+
+type chai =MasalaChai | GingerChai | ElaichiChai
+
+function makeChai(order:chai){
+  switch (order.type) {
+    case "masala":
+      return "Masala Chai"
+      break;
+  
+    case "elaichi":
+      return "Elaichi chai"
+      break;
+
+    case "ginger":
+      return "Ginger chai"
+      break;
+      
+    default:
+      break;
+  }
+}
