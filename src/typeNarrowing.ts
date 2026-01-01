@@ -64,15 +64,15 @@ function makeChai(order:chai){
   switch (order.type) {
     case "masala":
       return "Masala Chai"
-      break;
+      
   
     case "elaichi":
       return "Elaichi chai"
-      break;
+      
 
     case "ginger":
       return "Ginger chai"
-      break;
+      
       
     default:
       break;
