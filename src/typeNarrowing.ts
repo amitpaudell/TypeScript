@@ -78,3 +78,52 @@ function makeChai(order:chai){
       break;
   }
 }
+
+// Best example from the by Robin Wieruch about type guard
+
+type Dog={
+  name:string;
+  age:number;
+}
+
+const trixi:Dog={
+  name:'Trixi',
+  age:49
+}
+
+type Person={
+  firstName:string;
+  lastName:string;
+  age: number;
+}
+
+const bob:Person={
+  firstName:'Bob',
+  lastName: 'builder',
+  age:20
+}
+
+// const celebrateBirthday=(mammal:Person|Dog)=>{
+//   return {
+//     ...mammal,
+//     age:mammal.age+1
+//   }
+// }
+// console.log(celebrateBirthday(trixi).age)
+// console.log(celebrateBirthday(bob).age)
+
+//But the problem here is the dog age should increase by 7 and human by 1 so, we use user-defined type guard
+
+const isDog=(mammal:Person|Dog):mammal is Dog=>{
+  return (mammal as Dog).name !==undefined;
+}
+
+const celebrateBirthday=(mammal:Person|Dog)=>{
+  return {
+    ...mammal,
+    age:isDog(mammal)?mammal.age+7:mammal.age+1
+  }
+}
+console.log(celebrateBirthday(trixi).age)
+console.log(celebrateBirthday(bob).age);
+
