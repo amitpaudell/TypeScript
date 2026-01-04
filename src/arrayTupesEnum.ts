@@ -29,3 +29,36 @@ const table:number[][]=[
   [1,2,3],
   [4,5,6]
 ]
+
+
+                                    //Tuples
+
+let ourTuple:[number,boolean,string];
+ourTuple=[1,true,'book']
+
+//optional value in tuple
+let userInfo:[string,number,boolean?]
+userInfo=['hitesh',100]
+userInfo=['rohan',50,true]
+console.log(userInfo)
+
+//read-only tuple
+const graph:readonly[number,number]=[4,5]
+
+//named tuple
+const location:[x:number,y:number]=[22.5,55.3];
+
+//destructuring tuple
+const graphNew:[number,number]=[32,42]
+const [x,y]=graphNew;
+console.log(x,y);
+
+
+
+
+
+
+                                      //Enum
+
+
+
