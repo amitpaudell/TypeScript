@@ -59,6 +59,41 @@ console.log(x,y);
 
 
                                       //Enum
+enum CarName{
+  HONDA,
+  TOYOTA,
+  BMW
+}
+console.log(CarName)
+console.log(CarName.HONDA);
+
+//String Enums
+enum FruitName{
+  APPLE="apple",
+  BANANA="banana"
+}
+console.log(FruitName.APPLE)
+
+//Hetrogeneous Enum
+enum StudentDetails{
+  NAME='david',
+  AGE=20,
+  ROLL_NO=2
+}
+console.log(StudentDetails)
 
 
+//Use case scenario of ENUM
+enum Role{
+  STUDENT,
+  ADMIN,
+  TEACHER
+}
 
+function checkAccess(role:Role){
+  if(role==Role.ADMIN){
+    return "full access";
+  }
+}
+
+checkAccess(Role.ADMIN)
