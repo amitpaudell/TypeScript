@@ -82,3 +82,32 @@ class EkChai{
 }
 
 console.log(EkChai.shopName);
+
+
+//Abstract class
+
+abstract class Animal{
+  abstract makeSound():void;
+
+  move():void{
+    console.log('The animal is moving')
+  }
+}
+
+class Dog extends Animal{
+  makeSound(): void {
+    console.log('Woof Woof!')
+  }
+}
+
+class Cat extends Animal{
+  makeSound(): void {
+    console.log('Meow Meow')
+  }
+}
+const rex=new Dog();
+rex.makeSound();
+rex.move();
+
+const pie= new Cat();
+pie.makeSound();
