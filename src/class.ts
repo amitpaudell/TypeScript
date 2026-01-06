@@ -46,3 +46,39 @@ class Car{
 const car=new Car("Toyota");
 // car.make="Suzuki"; //Not allowded since it is readonly
 console.log(car.make); 
+
+
+
+
+
+//Getters and setters
+class Employee{
+  private _fullName:string='';
+
+  get fullName():string{
+    return this._fullName
+  }
+
+  set fullName(newName:string){
+    if(newName && newName.length>0){
+      this._fullName=newName
+    }
+    else{
+      console.log('Invalid name')
+    }
+  }
+}
+const employee= new Employee();
+employee.fullName='Hohn Doe';
+console.log(employee.fullName);
+employee.fullName='';
+
+//Static Members
+
+class EkChai{
+  static shopName='Chaicode effect'
+
+  constructor(public flavour:string){}
+}
+
+console.log(EkChai.shopName);
