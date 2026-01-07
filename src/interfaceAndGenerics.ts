@@ -31,7 +31,7 @@ interface Discount{
   (price:number):number;
 }
 
-const apply50:Discount=(p)=>p*50;
+const apply50:Discount=(p)=>p*0.5;
 console.log(apply50(200));
 
 //An object must having some functions
@@ -72,3 +72,28 @@ const u:User={
   name:'hitesh',
   age:23
 }
+
+
+                              //Generics
+function wrapInArray<T>(item:T):T[]{
+  return [item]
+}
+
+console.log(wrapInArray("masala"));
+console.log(wrapInArray(42))
+wrapInArray({flavor:'Ginger'});
+
+//Pairing
+function pair<A,B>(a:A,b:B):[A,B]{
+  return [a,b]
+}
+pair("masala",20)
+pair("ginger",{flavor:"Ginger"});
+
+//Interface
+interface Box <T>{
+  content:T
+}
+
+const numberBox:Box<number>={content:10};
+const newBox:Box<string>={content:'bob'};
