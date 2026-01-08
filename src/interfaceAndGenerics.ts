@@ -97,3 +97,14 @@ interface Box <T>{
 
 const numberBox:Box<number>={content:10};
 const newBox:Box<string>={content:'bob'};
+
+//In real world example
+interface ApiPromise<T>{
+  status:number,
+  data:T
+}
+
+const res: ApiPromise<{flavor:string}>={
+  status:200,
+  data:{flavor:"ginger"}
+}
