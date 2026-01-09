@@ -10,6 +10,7 @@ const ChaiCard = ({name,price,isSpecial=false}:ChaiCard) => {
       <h2>
        The price of  {name} is {price} {isSpecial && <span>⭐</span>}
       </h2>
+      
     </div>
   )
 }
