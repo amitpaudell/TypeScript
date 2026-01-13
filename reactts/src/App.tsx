@@ -1,4 +1,5 @@
 import './App.css';
+import Card from './components/Card';
 import ChaiCard from './components/ChaiCard';
 import Counter from './components/Counter';
 import FormOrder from './components/FormOrder';
@@ -24,6 +25,11 @@ function App() {
         <FormOrder
           onSubmit={(order) => console.log('Placed', order.name, order.cups)}
         ></FormOrder>
+      </div>
+      <div>
+        <Card title="Chai with TS" footer={<button>Order now</button>}>
+          <p>Guys</p>
+        </Card>
       </div>
     </div>
   );
